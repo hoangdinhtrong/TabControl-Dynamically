@@ -1,0 +1,30 @@
+﻿<UserControl x:Class="prismTabControl.Views.ComboboxChange"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             
+             xmlns:behaviors="http://schemas.microsoft.com/xaml/behaviors"
+             
+             xmlns:prism="http://prismlibrary.com/"             
+             prism:ViewModelLocator.AutoWireViewModel="True">
+    <Grid>
+        <ComboBox Name="listComboBox" 
+                  SelectedIndex="0" 
+                  SelectedValuePath="Tag" 
+                  Margin="5,0" 
+                  Height="35" 
+                  Width="150" 
+                  VerticalAlignment="Center" 
+                  HorizontalAlignment="Left">
+            <behaviors:Interaction.Triggers>
+                <behaviors:EventTrigger EventName="SelectionChanged">
+                    <behaviors:InvokeCommandAction 
+                        Command="{Binding SelectionChangedCommand}" 
+                        CommandParameter="{Binding ElementName=listComboBox, Path=SelectedValue}"/>
+                </behaviors:EventTrigger>
+            </behaviors:Interaction.Triggers>
+            <ComboBoxItem Content="Info" Tag="prismTabControl.Views.Info"/>
+            <ComboBoxItem Content="Warning" Tag="prismTabControl.Views.Warning"/>
+            <ComboBoxItem Content="Error" Tag="prismTabControl.Views.Error"/>
+        </ComboBox>
+    </Grid>
+</UserControl>

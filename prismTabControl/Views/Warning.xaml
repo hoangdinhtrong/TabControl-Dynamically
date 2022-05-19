@@ -1,0 +1,10 @@
+﻿<UserControl x:Class="prismTabControl.Views.Warning"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:prism="http://prismlibrary.com/"             
+             prism:ViewModelLocator.AutoWireViewModel="True"
+             x:Name="TabWarning">
+    <Grid>
+        <TextBlock Text="This is warning" />
+    </Grid>
+</UserControl>
